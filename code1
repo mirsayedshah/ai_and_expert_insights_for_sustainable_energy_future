@@ -1,0 +1,75 @@
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
+
+# Objective: Potential applications of AI and machine learning techniques (referenced in Table 1 of the main article) in various energy policy scenarios while considering sustainability requirements
+
+# Criteria and sub-criteria
+criteria = ['TF', 'EI', 'EV', 'SA', 'RC']
+sub_criteria = ['EEDM', 'RPS', 'NM', 'FIT', 'CPM', 'EMD', 'ECS', 'AIEC', 'RETI', 'SATM', 'ESST', 'EVCI', 'CCS', 'EDA', 'EB', 'ETP', 'EE', 'ERD', 'EMD', 'ICEC']
+
+# Criteria and sub-criteria abbreviations explaination or alternative option for using themselved instead of abbreviations.
+# criteria = ['Technical Feasibility', 'Environmental Impact', 'Economic Viability', 'Social Acceptability', 'Regulatory Compliance']
+# sub_criteria = ['Energy Efficiency and Demand Management', 'Renewable Portfolio Standard', 'Net Metering', 'Feed-in Tariff', 'Carbon Pricing Mechanism', 'Electricity Market Design', 'Energy Control System', 'Advanced Inverter Energy Control', 'Renewable Energy Technology Integration', 'Smart Appliances and Thermostats Management', 'Energy Storage System Technologies', 'Electric Vehicle Charging Infrastructure', 'Carbon Capture and Storage', 'Energy Data Analytics', 'Energy Balance', 'Energy Trading Platform', 'Energy Efficiency', 'Energy Resource Diversification', 'Energy Market Design', 'Integrated Community Energy Challenges']
+
+# The pairwise comparison matrix
+pairwise_matrix = np.array([
+    [1, 5, 3, 7, 2],
+    [1/5, 1, 2, 5, 1/3],
+    [1/3, 1/2, 1, 3, 1/2],
+    [1/7, 1/5, 1/3, 1, 1/4],
+    [1/2, 3, 2, 4, 1]
+])
+
+# The pairwise comparison matrix normalization 
+weights_matrix = pairwise_matrix / pairwise_matrix.sum(axis=1, keepdims=True)
+
+# Weights for each criterion
+criteria_weights = weights_matrix.mean(axis=1)
+
+# Weights for criterion of the sub-criteria 
+sub_criteria_weights = np.array([
+    [0.2, 0.1, 0.05, 0.15, 0.2, 0.1, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05],
+    [0.1, 0.15, 0.2, 0.1, 0.15, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05],
+    [0.05, 0.05, 0.1, 0.1, 0.1, 0.1, 0.05, 0.05, 0.05, 0.05, 0.1, 0.05, 0.05, 0.05, 0.05, 0.1, 0.05, 0.05, 0.05, 0.05],
+    [0.1, 0.1, 0.15, 0.05, 0.1, 0.1, 0.1, 0.05, 0.05, 0.05, 0.05, 0.1, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05],
+    [0.15, 0.1, 0.1, 0.1, 0.1, 0.1, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.1, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05]
+])
+
+# Overall weights of sub-criteria 
+overall_sub_criteria_weights = np.dot(criteria_weights, sub_criteria_weights)
+
+# Alternatives exploration 
+alternatives = ['A1', 'A2', 'A3', 'A4', 'A5']
+
+# Tperformance matrix for each alternative
+performance_matrix = np.array([
+    [8, 6, 7, 9, 7, 8, 8, 7, 9, 9, 8, 7, 7, 6, 8, 7, 8, 8, 7, 9],
+    [7, 8, 8, 7, 8, 7, 7, 8, 7, 7, 9, 8, 8, 7, 7, 8, 7, 8, 8, 7],
+    [6, 7, 7, 8, 7, 7, 7, 6, 8, 7, 7, 6, 6, 8, 7, 7, 6, 7, 7, 8],
+    [9, 9, 8, 8, 8, 9, 9, 8, 7, 8, 7, 9, 8, 8, 8, 9, 9, 9, 8, 8],
+    [8, 7, 7, 7, 8, 8, 7, 9, 8, 8, 8, 7, 8, 7, 8, 8, 7, 7, 9, 7]
+])
+
+# Multiplying the performance matrix by the overall sub-criteria weights matrix
+weighted_performance_matrix = performance_matrix @ overall_sub_criteria_weights
+
+# Normalizing the weighted scores
+normalized_scores = weighted_performance_matrix / weighted_performance_matrix.sum()
+
+# Print the results
+print("Criteria weights:")
+print(criteria_weights)
+
+print("Sub-criteria weights:")
+print(sub_criteria_weights)
+
+print("Overall sub-criteria weights:")
+print(overall_sub_criteria_weights)
+
+print("Weighted performance matrix:")
+print(weighted_performance_matrix)
+
+print("Normalized scores:")
+print(normalized_scores)
