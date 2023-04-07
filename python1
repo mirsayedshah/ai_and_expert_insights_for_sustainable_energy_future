@@ -1,3 +1,10 @@
+# Exploring the influence of the proposed sub-criteria on ai-powered energy policy through visualization of sub-criteria weights across five criteria.
+# Technical feasibility (TF)
+# Environmental Impact (EI)
+# Economic Viability (EV)
+# Social Acceptability (SA)
+# Regulatory Compliance (RC)
+
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -73,3 +80,5 @@ print(weighted_performance_matrix)
 
 print("Normalized scores:")
 print(normalized_scores)
+
+# Contact: danish@mdanish; https://mdanish.me
