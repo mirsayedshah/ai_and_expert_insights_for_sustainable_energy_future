@@ -15,7 +15,20 @@
 The code provides insights into the relative importance of different criteria and sub-criteria for energy policy scenarios and the evaluation of alternative solutions. The results can be used to inform decision-making processes and guide the development of energy policies that leverage AI and ML techniques while addressing sustainability requirements.</p>
 
 <hr />
-<p><strong>Original article:</strong> Soon will be available.&nbsp;</p>
+<p><strong>Article:</strong>&nbsp;&nbsp;<a href="https://doi.org/10.3390/en16083309" target="_blank"><strong>AI and Expert Insights for Sustainable Energy Future</strong></a></p>
 
-<p><strong>Citation:&nbsp;</strong></p>
-<quillbot-extension-portal></quillbot-extension-portal>
+<p><strong>Citation:&nbsp;</strong>&nbsp;</p>
+
+<p><strong>ACS Style</strong></p>
+
+<p>Danish, M.S.S. AI and Expert Insights for Sustainable Energy Future.&nbsp;<em>Energies</em>&nbsp;<strong>2023</strong>,&nbsp;<em>16</em>, 3309. https://doi.org/10.3390/en16083309</p>
+
+<p><strong>AMA Style</strong></p>
+
+<p>Danish MSS. AI and Expert Insights for Sustainable Energy Future.&nbsp;<em>Energies</em>. 2023; 16(8):3309. https://doi.org/10.3390/en16083309</p>
+
+<p><strong>Chicago Style</strong></p>
+
+<p>Danish, Mir Sayed Shah. 2023. &quot;AI and Expert Insights for Sustainable Energy Future&quot;&nbsp;<em>Energies</em>&nbsp;16, no. 8: 3309. https://doi.org/10.3390/en16083309</p>
+
+
